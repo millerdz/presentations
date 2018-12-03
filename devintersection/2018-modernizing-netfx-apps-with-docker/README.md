@@ -51,7 +51,7 @@ docker container run -it --rm --entrypoint powershell `
 Build app image:
 
 ```
-docker image build -t dwwx/signup-web `
+docker image build -t derrickdocker/signup-web `
   -f .\docker\frontend-web\v1\Dockerfile .
 ```
 
@@ -60,7 +60,7 @@ Run app container:
 ```
 docker container run `
   --detach --publish 8020:80 `
-  dwwx/signup-web
+  derrickdocker/signup-web
 ```
 > Browse to http://localhost:8020
 
@@ -81,7 +81,7 @@ Build the ASP.NET Core REST API:
 
 ```
 docker image build `
-  -t dwwx/reference-data-api `
+  -t derrickdocker/reference-data-api `
   -f .\docker\backend-rest-api\reference-data-api\Dockerfile .
 ```
 
@@ -91,7 +91,7 @@ Run the API:
 docker container run `
   --detach --publish 8060:80 `
   -e ConnectionStrings:SignUpDb="Server=signup-db;Database=SignUp;User Id=sa;Password=DockerCon!!!" `
-  dwwx/reference-data-api
+  derrickdocker/reference-data-api
 ```
 
 > Browse to http://localhost:8060/api/countries

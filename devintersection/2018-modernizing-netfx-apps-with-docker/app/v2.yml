@@ -13,7 +13,7 @@ services:
       - app-net
 
   signup-web:
-    image: dwwx/signup-web
+    image: derrickdocker/signup-web
     ports:
       - "8020:80"
     environment: 
@@ -27,7 +27,7 @@ services:
       - app-net
 
   reference-data-api:
-    image: dwwx/reference-data-api
+    image: derrickdocker/reference-data-api
     environment: 
       - ConnectionStrings:SignUpDb=Server=signup-db;Database=SignUp;User Id=sa;Password=DockerCon!!!
     depends_on:
